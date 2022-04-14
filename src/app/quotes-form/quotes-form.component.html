@@ -1,0 +1,30 @@
+<!-- <p>quotes-form works!</p> -->
+<!-- #mediaItemForm="ngForm"> -->
+
+<!-- (ngSubmit)="onSubmit(mediaItemForm.value)" -->
+<div class="container-fluid">
+   
+    <form class="form" #quoteform="ngForm"(ngSubmit)="submitForm()"  >
+        <h3> Quote Form</h3>
+        <div class="form-group">
+          <label for="quote">Enter the Quote</label><br>
+          <input type="text" class="form-control" id="quote" [(ngModel)]="quoted.quote" name="quote" #quote = "ngModel"  placeholder="Enter the quote" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Enter Quote's Title</label><br>
+          <input type="text" class="form-control" id="title" [(ngModel)]="quoted.title" name="title" #title = "ngModel" placeholder="quotes title" required>
+        </div>
+        <!-- <div class="form-group">
+          <label for="author">Enter the Quote's Author</label><br>
+          <input type="text" class="form-control" id="author" [(ngModel)]="quoted.author" name="author" #author = "ngModel" placeholder="Quote's author" required>
+        </div> -->
+      <div class="form-group">
+        <label for="name">Enter your official name</label><br>
+        <input type="text" class="form-control" id="name" [(ngModel)]="quoted.name" name="name" #name = "ngModel" placeholder="Enter your name" required>
+      </div>
+      
+      
+     <br>
+      <button type="submit" class="btn btn-primary">Add the quote</button>
+    </form>
+  </div>

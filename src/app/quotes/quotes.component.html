@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <app-quotes-form (add)="addNewQuote($event)"></app-quotes-form>
+        </div>
+        <div class="col-md-6">
+            <div *ngFor="let quote of quotes; let i = index" class="quotes">
+                <li>
+                    <p>{{quote.quote}}</p>
+                    <p class="text-danger"> Author: {{quote.title}}</p>
+                    <p class="text-primary"> Posted by: {{quote.name}}</p>
+                    <p> date posted on {{quote.datePosted | date:'short'}}</p>
+                    <app-quote-details *ngIf=" quote.myInfo" (isRead)="quoteDelete($event, i)"></app-quote-details>
+
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
